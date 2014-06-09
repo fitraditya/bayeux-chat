@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Roompy Social Chat">
+  <meta name="author" content="Fitra Aditya">
+  <title>Bayeux Chat</title>
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/font-awesome.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style>
+    html {
+      height: 100%;
+      position: relative;
+    }
+    body {
+      height: 100%;
+      padding-top: 80px;
+      position: relative;
+    }
+    .no-padding {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .panel-default {
+      border-color: #1B1B1B;
+    }
+    .chat-user, .chat-list {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Join room -->
+  <div class="modal fade" id="joinroomModal" tabindex="-1" role="dialog" aria-labelledby="joinroomModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="joinroomModalLabel">Gabung Public Room</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="inputJoinroom" class="col-sm-2 control-label">Room</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputJoinroom" autofocus>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-sm btn-success" id="btn-joinroom">Gabung</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="../" class="navbar-brand">Bayeux Chat</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" data-toggle="modal" data-target="#joinroomModal"><i class="fa fa-comments"></i>&nbsp;&nbsp;Gabung Public Room</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="btn-username"></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" id="btn-signout">Keluar</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="container-chat">
+    <div class="col-xs-12 no-padding">
+      <div class="panel panel-default">
+        <div class="panel-body" id="panel-body-chat">
+          <ul class="nav nav-tabs"></ul>
+          <div class="tab-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/bayeux/client.js"></script>
+  <script src="/assets/js/jquery.js"></script>
+  <script src="/assets/js/bootstrap.js"></script>
+  <script src="/assets/js/tabs.js"></script>
+  <script src="/assets/js/chat.js"></script>
+  <script src="/assets/js/client.js"></script>
+</body>
+
+</html>

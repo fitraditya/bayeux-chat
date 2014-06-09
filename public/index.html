@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Roompy Social Chat">
+  <meta name="author" content="Fitra Aditya">
+  <title>Bayeux Chat</title>
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.css" rel="stylesheet">
+  <link href="assets/css/cover.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <!-- Sign up -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="signupModalLabel">Daftar</h4>
+        </div>
+        <div class="modal-body">
+          <div id="signupresult"></div>
+          <form class="form-horizontal" id="formSignup" method="POST" action="./signup" role="form" data-parsley-validate>
+            <div class="form-group">
+              <label for="inputSignupUsername" class="col-sm-2 control-label">Username</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputSignupUsername" name="signupusername" placeholder="Username" data-parsley-trigger="change" data-parsley-length="[5, 20]" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputSignupPassword" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputSignupPassword" name="signuppassword" placeholder="Password" data-parsley-trigger="change" data-parsley-minlength="5" required>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-sm btn-success" id="btn-signup">Daftar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sign in -->
+  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="signinModalLabel">Masuk</h4>
+        </div>
+        <div class="modal-body">
+          <div id="signinresult"></div>
+          <form class="form-horizontal" id="formSignin" method="POST" action="./signin" role="form" data-parsley-validate>
+            <div class="form-group">
+              <label for="inputSigninUsername" class="col-sm-2 control-label">Username</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputSigninUsername" name="signinusername" placeholder="Username" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputSigninPassword" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputSigninPassword" name="signinpassword" placeholder="Password" required>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-sm btn-success" id="btn-signin">Masuk</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <div class="masthead clearfix">
+          <div class="inner">
+            <h3 class="masthead-brand">Bayeux Chat</h3>
+            <ul class="nav masthead-nav">
+              <li class="active"><a href="#">Beranda</a></li>
+              <li><a href="#">Bantuan</a></li>
+              <li><a href="#">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="inner cover">
+          <p class="lead">
+            <a href="#" class="btn btn-lg btn-success btn-sm" data-toggle="modal" data-target="#signinModal">Masuk</a>&nbsp;&nbsp;&nbsp;&nbsp;atau&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-lg btn-info btn-sm" data-toggle="modal" data-target="#signupModal">Daftar</a>
+          </p>
+        </div>
+        <div class="mastfoot">
+          <div class="inner">
+            <p>&copy; 2014. Lisensi MIT</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/parsley.js"></script>
+  <script src="assets/js/cover.js"></script>
+</body>
+
+</html>

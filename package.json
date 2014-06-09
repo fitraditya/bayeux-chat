@@ -1,0 +1,18 @@
+{
+  "name": "bayeux-chat",
+  "version": "0.1.0",
+  "description": "Simple chat application using node.js and faye",
+  "author": "Fitra Aditya <fitra@g.pl>",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": ">=0.10.28"
+  },
+  "dependencies": {
+    "faye": ">=1.0.1",
+    "sqlite3": ">=2.2.3",
+    "mime": ">=1.2.11"
+  },
+  "license": "MIT"
+}
